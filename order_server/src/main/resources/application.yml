@@ -1,6 +1,6 @@
 eureka:
     instance:
-        hostname: 192.168.168.168
+        hostname: 192.168.173.95
         prefer-ip-address: true
     client:
         serviceUrl:
@@ -23,8 +23,8 @@ spring:
                 tx-service-group: default
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://116.62.xx.xx/seata-order
-        password: xxxx
+        url: jdbc:mysql://116.62.62.26/seata-order
+        password: 14789632
         username: root
 
 # -----------seata--------------
