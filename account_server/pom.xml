@@ -41,23 +41,18 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+		<!--seata-all-->
 		<dependency>
 			<groupId>io.seata</groupId>
 			<artifactId>seata-all</artifactId>
-			<version>${seata.version}</version>
+			<version>${seata-version}</version>
 		</dependency>
+		<!--sca-seata-->
 		<dependency>
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-seata</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-		</dependency>
 	</dependencies>
-
 	<dependencyManagement>
 		<dependencies>
 			<!--Spring Cloud-->

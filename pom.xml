@@ -26,7 +26,6 @@
 		<mybatis-spring-boot-starter.version>2.0.0</mybatis-spring-boot-starter.version>
 		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
 		<lombok.version>1.18.8</lombok.version>
-		<seata.version>1.0.0</seata.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,13 +63,6 @@
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 		</dependency>
-		<!--seata-->
-		<!-- https://mvnrepository.com/artifact/io.seata/seata-spring-boot-starter -->
-		<!--<dependency>-->
-			<!--<groupId>io.seata</groupId>-->
-			<!--<artifactId>seata-spring-boot-starter</artifactId>-->
-			<!--<version>${seata.version}</version>-->
-		<!--</dependency>-->
 
 	</dependencies>
 
