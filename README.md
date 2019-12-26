@@ -191,7 +191,7 @@ nohup sh seata-server.sh -h xx.xx.xx.xx -p 8091 -m db -n 1 &
 
 seata server端和client端的脚本和配置，都汇总在这里，client端整合时，去找对应的文件复制过来修改。
 
-[script]: https://github.com/seata/seata/tree/develop/script
+![script]: https://github.com/seata/seata/tree/develop/script
 
 #### 1.修改bootstrap.yml
 
@@ -323,7 +323,7 @@ public class DataSourceConfiguration {
 
 如果你引入的依赖和技术选型，没有实现xid传递等逻辑，你需要参考源码integration文件夹下的各种rpc实现 module。
 
-[integration]: https://github.com/seata/seata/tree/develop/integration
+![integration]: https://github.com/seata/seata/tree/develop/integration
 
 ### 6.实现scanner入口
 
