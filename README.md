@@ -135,6 +135,10 @@ nohup sh seata-server.sh -h xx.xx.xx.xx -p 8091 -m db -n 1 &
 | seata-spring-boot-starter  | 是          | 否          | 是                 | 是                                     |
 | spring-cloud-alibaba-seata | 否          | 是          | 是                 | 是                                     |
 
+不建议用户仅引入seata-all，需要自行实现的东西太多。
+
+spring-cloud-alibaba-seata，2.1.0内嵌seata-all 0.7.1，2.1.1内嵌seata-all 0.9.0。建议排除掉，引入1.0；
+
 我们这里以引入spring-cloud-alibaba-seata 依赖为例，下面仅展示与seata相关的依赖：
 
 ```java
