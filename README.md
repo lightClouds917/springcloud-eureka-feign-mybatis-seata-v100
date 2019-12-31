@@ -63,7 +63,7 @@ config {
 [root@jr-test conf]# cat file.conf
 service {
   #transaction service group mapping
-  vgroup_mapping.fsp_tx_group = "fsp-tx"  //事务分组，非常重要，client和tc一定要一致，fsp_tx_group是个自定义的分组名称
+  vgroup_mapping.default = "fsp-tx"  //事务分组，非常重要，client和tc一定要一致，default是个自定义的分组名称
   #only support when registry.type=file, please don't set multiple addresses
   default.grouplist = "127.0.0.1:8091"
   #disable seata
@@ -206,7 +206,7 @@ spring:
   cloud:
     alibaba:
       seata:
-        tx-service-group: fsp_tx_group
+        tx-service-group: default //这个default是事务分组名称，与server端的事务分组名称保持一致
 ```
 
 这个分组名称自定义，但是seata server端，client端要保持一致。
@@ -221,7 +221,7 @@ file.conf
 //省略很多
 service {
   #transaction service group mapping
-  vgroup_mapping.default = "default"
+  vgroup_mapping.default = "default"  //这个default是事务分组名称，与server端的事务分组名称保持一致
   #only support when registry.type=file, please don't set multiple addresses
   default.grouplist = "127.0.0.1:8091"
   #degrade, current not support
@@ -252,7 +252,7 @@ registry {
   type = "eureka"
   eureka {
     serviceUrl = "http://192.xx.xx.xx:8761/eureka"
-    application = "default" 
+    application = "seata-server" 
     weight = "1"
   }
     //省略
