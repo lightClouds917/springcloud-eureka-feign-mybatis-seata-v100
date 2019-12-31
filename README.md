@@ -40,7 +40,7 @@ registry {
   }
   eureka {
     serviceUrl = "http://192.xx.xx.xx:8761/eureka" //注册中心地址
-    application = "seata-server" //tc注册时的名称
+    application = "fsp_tx" //tc注册时的名称
     weight = "1"
   }
   //......支持多种
@@ -63,7 +63,7 @@ config {
 [root@jr-test conf]# cat file.conf
 service {
   #transaction service group mapping
-  vgroup_mapping.default = "fsp-tx"  //事务分组，非常重要，client和tc一定要一致，default是个自定义的分组名称
+  vgroup_mapping.default = "fsp_tx"  //事务分组，非常重要，client和tc一定要一致，default是个自定义的分组名称
   #only support when registry.type=file, please don't set multiple addresses
   default.grouplist = "127.0.0.1:8091"
   #disable seata
@@ -221,7 +221,7 @@ file.conf
 //省略很多
 service {
   #transaction service group mapping
-  vgroup_mapping.default = "default"  //这个default是事务分组名称，与server端的事务分组名称保持一致
+  vgroup_mapping.default = "fsp_tx"  //这个default是事务分组名称，与server端的事务分组名称保持一致
   #only support when registry.type=file, please don't set multiple addresses
   default.grouplist = "127.0.0.1:8091"
   #degrade, current not support
@@ -252,7 +252,7 @@ registry {
   type = "eureka"
   eureka {
     serviceUrl = "http://192.xx.xx.xx:8761/eureka"
-    application = "seata-server" 
+    application = "fsp_tx" 
     weight = "1"
   }
     //省略
@@ -410,7 +410,7 @@ public class GlobalTransactionAutoConfiguration {
 - 2.@GlobalLock 防止脏读和脏写，又不想纳入全局事务管理时使用。（不需要rpc和xid传递等成本）
 
 ### 9.辅助信息
-#### 1.client端如果正常启动，会有如下日志：
+#### 1.client端如果正常启动，在server端会有如下日志，否则，请再检查配置：
 ```java
 2019-12-31 15:38:44.170 INFO [ServerHandlerThread_1_500]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegRmMessage:123 -rm register success,message:RegisterRMRequest{resourceIds='jdbc:mysql://116.xx.xx.xx/seata-account', applicationId='account-server', transactionServiceGroup='default'},channel:[id: 0xb58488ac, L:/192.xx.xx.xx:8091 - R:/192.xx.xx.xx:13641]
 2019-12-31 15:38:44.968 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegTmMessage:140 -checkAuth for client:192.xx.xx.xx:13644,vgroup:default,applicationId:account-server
