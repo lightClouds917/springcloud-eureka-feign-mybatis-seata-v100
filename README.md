@@ -409,5 +409,13 @@ public class GlobalTransactionAutoConfiguration {
 - 1.@GlobalTransaction 全局事务注解
 - 2.@GlobalLock 防止脏读和脏写，又不想纳入全局事务管理时使用。（不需要rpc和xid传递等成本）
 
+### 9.辅助信息
+#### 1.client端如果正常启动，会有如下日志：
+```java
+2019-12-31 15:38:44.170 INFO [ServerHandlerThread_1_500]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegRmMessage:123 -rm register success,message:RegisterRMRequest{resourceIds='jdbc:mysql://116.xx.xx.xx/seata-account', applicationId='account-server', transactionServiceGroup='default'},channel:[id: 0xb58488ac, L:/192.xx.xx.xx:8091 - R:/192.xx.xx.xx:13641]
+2019-12-31 15:38:44.968 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegTmMessage:140 -checkAuth for client:192.xx.xx.xx:13644,vgroup:default,applicationId:account-server
+
+```
+
 
 
