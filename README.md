@@ -410,6 +410,9 @@ public class GlobalTransactionAutoConfiguration {
 - 2.@GlobalLock 防止脏读和脏写，又不想纳入全局事务管理时使用。（不需要rpc和xid传递等成本）
 
 ### 9.辅助信息
+
+##### 如果发现数据不一致，可以参考下面的一些典型日志，或者查找关键字，比如Successfully begin global transaction，Successfully register branch xid = 。。。可以辅助你确认你的配置是否正确有效，各分支事务是否注册，纳入全局管理。
+
 #### 1.client端如果正常启动，在server端会有如下日志，否则，请再检查配置：
 ```java
 2019-12-31 15:38:44.170 INFO [ServerHandlerThread_1_500]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegRmMessage:123 -rm register success,message:RegisterRMRequest{resourceIds='jdbc:mysql://116.xx.xx.xx/seata-account', applicationId='account-server', transactionServiceGroup='default'},channel:[id: 0xb58488ac, L:/192.xx.xx.xx:8091 - R:/192.xx.xx.xx:13641]
@@ -417,5 +420,56 @@ public class GlobalTransactionAutoConfiguration {
 
 ```
 
+#### 2.全局事务提交成功,server端会有日志如下：
+```java
+2019-12-31 16:00:31.209 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage timeout=60000,transactionName=fsp-create-order
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:31.211 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.begin:154 -Successfully begin global transaction xid = 192.xx.xx.xx:8091:2031075692
+2019-12-31 16:00:31.253 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-order,lockKey=order:877
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:31.257 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075694
+2019-12-31 16:00:31.278 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchId=2031075694,resourceId=null,status=PhaseOne_Done,applicationData=null
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:31.283 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075694
+2019-12-31 16:00:31.339 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-storage,lockKey=storage:1
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:31.344 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075697
+2019-12-31 16:00:31.363 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchId=2031075697,resourceId=null,status=PhaseOne_Done,applicationData=null
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:31.366 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075697
+2019-12-31 16:00:32.237 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-account,lockKey=account:1
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:32.242 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075701
+2019-12-31 16:00:32.294 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchId=2031075701,resourceId=null,status=PhaseOne_Done,applicationData=null
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:32.327 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075701
+2019-12-31 16:00:32.368 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,extraData=null
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:00:32.775 INFO [AsyncCommitting_1]io.seata.server.coordinator.DefaultCore.doGlobalCommit:316 -Global[192.xx.xx.xx:8091:2031075692] committing is successfully done.
 
+```
 
+#### 3.全局事务提交失败,server端会有日志如下：
+```java
+2019-12-31 16:16:50.327 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage timeout=60000,transactionName=fsp-create-order
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:16:50.329 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.begin:154 -Successfully begin global transaction xid = 192.xx.xx.xx:8091:2031075709
+2019-12-31 16:16:50.408 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-order,lockKey=order:878
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:16:50.412 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075711
+2019-12-31 16:16:50.432 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchId=2031075711,resourceId=null,status=PhaseOne_Done,applicationData=null
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:16:50.435 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075711
+2019-12-31 16:16:50.520 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-storage,lockKey=storage:1
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:16:50.523 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075714
+2019-12-31 16:16:50.541 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchId=2031075714,resourceId=null,status=PhaseOne_Done,applicationData=null
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:16:50.544 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075714
+2019-12-31 16:16:52.569 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,extraData=null
+,clientIp:192.xx.xx.xx,vgroup:default
+2019-12-31 16:16:52.626 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:418 -Successfully rollback branch xid=192.xx.xx.xx:8091:2031075709 branchId=2031075714
+2019-12-31 16:16:52.693 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:418 -Successfully rollback branch xid=192.xx.xx.xx:8091:2031075709 branchId=2031075711
+2019-12-31 16:16:52.696 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:465 -Successfully rollback global, xid = 192.xx.xx.xx:8091:2031075709
+
+```
