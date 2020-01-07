@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 public class AccountServiceImpl implements AccountService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountServiceImpl.class);
+    private final BigDecimal ERROR_MONEY = new BigDecimal("200");
     @Autowired
     private AccountDao accountDao;
 
@@ -28,11 +29,9 @@ public class AccountServiceImpl implements AccountService{
     @GlobalTransactional
     public void decrease(Long userId, BigDecimal money) {
         LOGGER.info("------->扣减账户开始account中");
-        //模拟超时异常，全局事务回滚
-        try {
-            Thread.sleep(30*1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        //模拟超时异常，全局事务回滚 条件：money=200
+        if(ERROR_MONEY.compareTo(money) == 0){
+            throw new RuntimeException("非法参数,money为："+money);
         }
         accountDao.decrease(userId,money);
         LOGGER.info("------->扣减账户结束account中");
