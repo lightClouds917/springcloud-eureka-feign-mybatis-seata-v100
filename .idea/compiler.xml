@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="account_server" />
         <module name="order_server" />
-        <module name="springcloud-eureka-feign-mybatis-seata-v100" />
         <module name="storage_server" />
       </profile>
     </annotationProcessing>
