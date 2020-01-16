@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed020a09-b565-4771-9776-825fbd4e8b67" name="Default" comment="add：verify.sql">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/DataSourceConfiguration.class" afterPath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/DataSourceConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/service/OrderServiceImpl.class" afterPath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/service/OrderServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage_server/target/classes/io/seata/sample/DataSourceConfiguration.class" afterPath="$PROJECT_DIR$/storage_server/target/classes/io/seata/sample/DataSourceConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+    <list default="true" id="ed020a09-b565-4771-9776-825fbd4e8b67" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/service/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/service/OrderServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order_server/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/order_server/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order_server/src/main/resources/registry.conf" afterPath="$PROJECT_DIR$/order_server/src/main/resources/registry.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage_server/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/storage_server/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage_server/src/main/resources/registry.conf" afterPath="$PROJECT_DIR$/storage_server/src/main/resources/registry.conf" />
     </list>
     <ignored path="$PROJECT_DIR$/storage_server/target/" />
     <ignored path="$PROJECT_DIR$/account_server/target/" />
@@ -791,7 +782,7 @@
       <workItem from="1578964936634" duration="1663000" />
       <workItem from="1578990121539" duration="477000" />
       <workItem from="1579057337315" duration="2525000" />
-      <workItem from="1579143541707" duration="2246000" />
+      <workItem from="1579143541707" duration="2755000" />
     </task>
     <task id="LOCAL-00001" summary="add:add sql and update file.conf">
       <created>1577336717364</created>
@@ -905,11 +896,25 @@
       <option name="project" value="LOCAL" />
       <updated>1579145699346</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add：mod pass for me">
+      <created>1579145898403</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1579145898403</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add：mod pass for me">
+      <created>1579145917013</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1579145917013</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66728000" />
+    <option name="totallyTimeSpent" value="67237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -939,9 +944,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33215964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33215964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27414164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27414164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -997,6 +1002,7 @@
     <MESSAGE value="add：verify.sql" />
     <MESSAGE value="add：mod pass for me" />
     <option name="LAST_COMMIT_MESSAGE" value="add：mod pass for me" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1021,7 +1027,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/service/OrderServiceImpl.java</url>
-          <line>49</line>
+          <line>48</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
