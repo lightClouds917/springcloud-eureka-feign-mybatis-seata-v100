@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="116.62.62.26">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1"/>
     <schema id="2" parent="1" name="alipay">
       <Current>1</Current>
@@ -52,29 +52,29 @@
     <column id="41" parent="35" name="id">
       <Position>1</Position>
       <Comment>id</Comment>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>bigint(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="42" parent="35" name="user_id">
       <Position>2</Position>
       <Comment>用户id</Comment>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>bigint(11)|0s</DataType>
     </column>
     <column id="43" parent="35" name="total">
       <Position>3</Position>
       <Comment>总额度</Comment>
-      <DataType>decimal(10)|0</DataType>
+      <DataType>decimal(10)|0s</DataType>
     </column>
     <column id="44" parent="35" name="used">
       <Position>4</Position>
       <Comment>已用余额</Comment>
-      <DataType>decimal(10)|0</DataType>
+      <DataType>decimal(10)|0s</DataType>
     </column>
     <column id="45" parent="35" name="residue">
       <Position>5</Position>
       <Comment>剩余可用额度</Comment>
-      <DataType>decimal(10)|0</DataType>
+      <DataType>decimal(10)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
     <key id="46" parent="35" name="PRIMARY">
@@ -84,48 +84,48 @@
     </key>
     <column id="47" parent="36" name="id">
       <Position>1</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="48" parent="36" name="branch_id">
       <Position>2</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="49" parent="36" name="xid">
       <Position>3</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="50" parent="36" name="context">
       <Position>4</Position>
-      <DataType>varchar(128)|0</DataType>
+      <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="51" parent="36" name="rollback_info">
       <Position>5</Position>
-      <DataType>longblob|0</DataType>
+      <DataType>longblob|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="52" parent="36" name="log_status">
       <Position>6</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="53" parent="36" name="log_created">
       <Position>7</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="54" parent="36" name="log_modified">
       <Position>8</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="55" parent="36" name="ext">
       <Position>9</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
     </column>
     <index id="56" parent="36" name="ux_undo_log">
       <ColNames>xid
@@ -144,34 +144,34 @@ branch_id</ColNames>
     </key>
     <column id="59" parent="37" name="id">
       <Position>1</Position>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>bigint(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="60" parent="37" name="user_id">
       <Position>2</Position>
       <Comment>用户id</Comment>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>bigint(11)|0s</DataType>
     </column>
     <column id="61" parent="37" name="product_id">
       <Position>3</Position>
       <Comment>产品id</Comment>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>bigint(11)|0s</DataType>
     </column>
     <column id="62" parent="37" name="count">
       <Position>4</Position>
       <Comment>数量</Comment>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
     </column>
     <column id="63" parent="37" name="money">
       <Position>5</Position>
       <Comment>金额</Comment>
-      <DataType>decimal(11)|0</DataType>
+      <DataType>decimal(11)|0s</DataType>
     </column>
     <column id="64" parent="37" name="status">
       <Position>6</Position>
       <Comment>订单状态：0：创建中；1：已完结</Comment>
-      <DataType>int(1)|0</DataType>
+      <DataType>int(1)|0s</DataType>
     </column>
     <key id="65" parent="37" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -180,48 +180,48 @@ branch_id</ColNames>
     </key>
     <column id="66" parent="38" name="id">
       <Position>1</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="67" parent="38" name="branch_id">
       <Position>2</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="68" parent="38" name="xid">
       <Position>3</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="69" parent="38" name="context">
       <Position>4</Position>
-      <DataType>varchar(128)|0</DataType>
+      <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="70" parent="38" name="rollback_info">
       <Position>5</Position>
-      <DataType>longblob|0</DataType>
+      <DataType>longblob|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="71" parent="38" name="log_status">
       <Position>6</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="72" parent="38" name="log_created">
       <Position>7</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="73" parent="38" name="log_modified">
       <Position>8</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="74" parent="38" name="ext">
       <Position>9</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
     </column>
     <index id="75" parent="38" name="ux_undo_log">
       <ColNames>xid
@@ -240,29 +240,29 @@ branch_id</ColNames>
     </key>
     <column id="78" parent="39" name="id">
       <Position>1</Position>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>bigint(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="79" parent="39" name="product_id">
       <Position>2</Position>
       <Comment>产品id</Comment>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>bigint(11)|0s</DataType>
     </column>
     <column id="80" parent="39" name="total">
       <Position>3</Position>
       <Comment>总库存</Comment>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
     </column>
     <column id="81" parent="39" name="used">
       <Position>4</Position>
       <Comment>已用库存</Comment>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
     </column>
     <column id="82" parent="39" name="residue">
       <Position>5</Position>
       <Comment>剩余库存</Comment>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
     </column>
     <key id="83" parent="39" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -271,48 +271,48 @@ branch_id</ColNames>
     </key>
     <column id="84" parent="40" name="id">
       <Position>1</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="85" parent="40" name="branch_id">
       <Position>2</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="86" parent="40" name="xid">
       <Position>3</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="87" parent="40" name="context">
       <Position>4</Position>
-      <DataType>varchar(128)|0</DataType>
+      <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="88" parent="40" name="rollback_info">
       <Position>5</Position>
-      <DataType>longblob|0</DataType>
+      <DataType>longblob|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="89" parent="40" name="log_status">
       <Position>6</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="90" parent="40" name="log_created">
       <Position>7</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="91" parent="40" name="log_modified">
       <Position>8</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="92" parent="40" name="ext">
       <Position>9</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
     </column>
     <index id="93" parent="40" name="ux_undo_log">
       <ColNames>xid
