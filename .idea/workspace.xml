@@ -2,67 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed020a09-b565-4771-9776-825fbd4e8b67" name="Default" comment="mod:mod pass for me">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_cloud_spring_cloud_alibaba_seata_1_5_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_cloud_spring_cloud_starter_alibaba_seata_1_5_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_60.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_ben_manes_caffeine_caffeine_2_3_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_typesafe_config_1_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_30_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_seata_seata_all_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_1_5_4_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/account_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/account_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/java/io/seata/sample/AccountServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/src/main/java/io/seata/sample/AccountServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/java/io/seata/sample/DataSourceConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/java/io/seata/sample/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/src/main/java/io/seata/sample/service/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/resources/file.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/resources/registry.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/file.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/AccountServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/AccountServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/DataSourceConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/service/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/service/AccountServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/registry.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/order_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/order_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/DataSourceConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/OrderServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/OrderServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/service/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/resources/file.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/resources/registry.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/file.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/DataSourceConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/OrderServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/OrderServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/entity/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/service/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/target/classes/io/seata/sample/service/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/registry.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/java/io/seata/sample/DataSourceConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/java/io/seata/sample/StorageServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/src/main/java/io/seata/sample/StorageServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/java/io/seata/sample/service/StorageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/src/main/java/io/seata/sample/service/StorageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/resources/file.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/resources/registry.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/storage_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/storage_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/file.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/io/seata/sample/DataSourceConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/io/seata/sample/StorageServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/target/classes/io/seata/sample/StorageServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/io/seata/sample/service/StorageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/target/classes/io/seata/sample/service/StorageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/registry.conf" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/storage_server/target/" />
     <ignored path="$PROJECT_DIR$/account_server/target/" />
@@ -78,17 +18,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -214,11 +144,11 @@
       </PATH>
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -712,10 +642,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38828000" />
+    <option name="totallyTimeSpent" value="39093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info id="Web" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19034852" />
@@ -735,11 +665,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3313783" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33577713" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Statistic" order="10" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32991204" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32991204" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
