@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed020a09-b565-4771-9776-825fbd4e8b67" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ddf58e5a-1d5e-44d0-b0a5-8042faf79544.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ddf58e5a-1d5e-44d0-b0a5-8042faf79544.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/account_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/account_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/resources/file.conf" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/src/main/resources/file.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/src/main/resources/registry.conf" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/src/main/resources/registry.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/DataSourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/DataSourceConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/io/seata/sample/sample/AccountServerApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account_server/target/classes/registry.conf" beforeDir="false" afterPath="$PROJECT_DIR$/account_server/target/classes/registry.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/order_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/order_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/resources/file.conf" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/src/main/resources/file.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/src/main/resources/registry.conf" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/src/main/resources/registry.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_server/target/classes/registry.conf" beforeDir="false" afterPath="$PROJECT_DIR$/order_server/target/classes/registry.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/resources/file.conf" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/src/main/resources/file.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/src/main/resources/registry.conf" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/src/main/resources/registry.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/storage_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/storage_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_server/target/classes/registry.conf" beforeDir="false" afterPath="$PROJECT_DIR$/storage_server/target/classes/registry.conf" afterDir="false" />
-    </list>
+    <list default="true" id="ed020a09-b565-4771-9776-825fbd4e8b67" name="Default" comment="mod:mod pass for me" />
     <ignored path="$PROJECT_DIR$/storage_server/target/" />
     <ignored path="$PROJECT_DIR$/account_server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -105,17 +81,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/seata/seata-all/1.0.0/seata-all-1.0.0-sources.jar!/io/seata/spring/annotation/GlobalTransactionalInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -165,9 +131,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response25.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -248,7 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,160 +219,11 @@
               <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
               <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="account_server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="account_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="account_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="account_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="account_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="account_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="order_server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="order_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="order_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="order_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="order_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="order_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="order_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="storage_server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="storage_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="storage_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="storage_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="storage_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="storage_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-eureka-feign-mybatis-seata-v100" type="462c0819:PsiDirectoryNode" />
-              <item name="storage_server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -791,6 +605,7 @@
       <workItem from="1582248478553" duration="1205000" />
       <workItem from="1582335488125" duration="3262000" />
       <workItem from="1582509515423" duration="9692000" />
+      <workItem from="1582806464558" duration="310000" />
     </task>
     <task id="LOCAL-00001" summary="add:add sql and update file.conf">
       <created>1577336717364</created>
@@ -936,13 +751,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95731000" />
+    <option name="totallyTimeSpent" value="96041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18766756" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19034852" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -952,7 +766,6 @@
       <window_info id="Nl-Palette" order="7" />
       <window_info id="JRebel" order="8" side_tool="true" />
       <window_info id="Web" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="REST Client" sideWeight="0.49932975" visible="true" weight="0.4589443" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286385" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32902467" />
@@ -961,11 +774,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33215964" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3313783" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.4589443" />
       <window_info anchor="bottom" id="Statistic" order="10" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3298122" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.5" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Problems" order="14" />
       <window_info anchor="bottom" id="JRebel Console" order="15" sideWeight="0.5017065" side_tool="true" weight="0.36363637" />
@@ -973,6 +786,7 @@
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.32976827" />
       <window_info anchor="bottom" id="Docker" order="18" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="19" />
+      <window_info anchor="bottom" id="REST Client" order="20" sideWeight="0.49932975" visible="true" weight="0.4589443" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1002,6 +816,14 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
               </option>
             </State>
           </value>
@@ -1295,13 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/c5a15ff4/ddf58e5a-1d5e-44d0-b0a5-8042faf79544/seata-account.account" />
     <entry file="file://$PROJECT_DIR$/order_server/src/main/java/io/seata/sample/controller/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1311,38 +1126,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/registry.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/verify.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/registry.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/registry.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1374,34 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-185">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/file.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/file.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/file.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/seata/seata-all/1.0.0/seata-all-1.0.0-sources.jar!/io/seata/core/constants/ConfigurationKeys.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1427,6 +1186,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/file.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/registry.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/file.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/registry.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/registry.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/file.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
         </state>
       </provider>
     </entry>

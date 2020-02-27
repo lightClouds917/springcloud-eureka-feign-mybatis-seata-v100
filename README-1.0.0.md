@@ -1,5 +1,7 @@
 # seata 1.0入门教程
 
+##### 本教程基于seata 1.0.0版本
+
 ### 技术选型及版本
 spring-cloud-starter-alibaba-seata
 
