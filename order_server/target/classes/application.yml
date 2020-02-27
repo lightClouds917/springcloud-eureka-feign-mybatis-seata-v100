@@ -17,14 +17,10 @@ server:
 spring:
     application:
         name: order-server
-    cloud:
-        alibaba:
-            seata:
-                tx-service-group: default
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://116.62.62.26/seata-order
-        password: 14789632
+        url: jdbc:mysql://116.xx.xx.xx/seata-order
+        password: xxxxxx
         username: root
 
 # -----------seata--------------

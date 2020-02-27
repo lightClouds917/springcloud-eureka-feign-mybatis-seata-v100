@@ -13,10 +13,6 @@ server:
 spring:
     application:
         name: account-server
-    cloud:
-        alibaba:
-            seata:
-                tx-service-group: default
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://116.62.62.26/seata-account

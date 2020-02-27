@@ -6,10 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="account_server" />
-        <module name="order_server" />
-        <module name="springcloud-eureka-feign-mybatis-seata-v100" />
         <module name="storage_server" />
+        <module name="order_server" />
+        <module name="account_server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

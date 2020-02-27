@@ -1,7 +1,6 @@
 package io.seata.sample.service;
 
 import io.seata.sample.dao.StorageDao;
-import io.seata.spring.annotation.GlobalTransactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,6 @@ public class StorageServiceImpl implements StorageService {
      * @return
      */
     @Override
-    @GlobalTransactional
     public void decrease(Long productId, Integer count) {
         LOGGER.info("------->扣减库存开始");
         storageDao.decrease(productId,count);

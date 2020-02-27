@@ -4,7 +4,6 @@ import io.seata.sample.dao.OrderDao;
 import io.seata.sample.entity.Order;
 import io.seata.sample.feign.AccountApi;
 import io.seata.sample.feign.StorageApi;
-import io.seata.spring.annotation.GlobalTransactional;
 import java.math.BigDecimal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +35,6 @@ public class OrderServiceImpl implements OrderService{
      * 2.不添加本地事务：创建订单，扣减库存
      */
     @Override
-    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
     public void create(Order order) {
         LOGGER.info("------->交易开始");
         //本地方法

@@ -15,13 +15,9 @@ spring:
         name: storage-server
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://116.62.62.26/seata-storage
-        password: 14789632
+        url: jdbc:mysql://116.xx.xx.xx/seata-storage
+        password: xxxxxx
         username: root
-    cloud:
-        alibaba:
-            seata:
-                tx-service-group: default
 # -----------seata--------------
 
 # -----------seata--------------
