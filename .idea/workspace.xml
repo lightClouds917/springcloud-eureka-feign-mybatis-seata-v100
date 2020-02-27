@@ -163,6 +163,7 @@
         <option value="$PROJECT_DIR$/account_server/src/main/resources/file.conf" />
         <option value="$PROJECT_DIR$/storage_server/src/main/resources/file.conf" />
         <option value="$PROJECT_DIR$/order_server/src/main/resources/file.conf" />
+        <option value="$PROJECT_DIR$/README-1.0.0.md" />
       </list>
     </option>
   </component>
@@ -197,11 +198,11 @@
       </PATH>
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="979" />
-    <option name="height" value="1049" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="951" />
+    <option name="y" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -605,7 +606,7 @@
       <workItem from="1582248478553" duration="1205000" />
       <workItem from="1582335488125" duration="3262000" />
       <workItem from="1582509515423" duration="9692000" />
-      <workItem from="1582806464558" duration="310000" />
+      <workItem from="1582806464558" duration="586000" />
     </task>
     <task id="LOCAL-00001" summary="add:add sql and update file.conf">
       <created>1577336717364</created>
@@ -751,12 +752,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96041000" />
+    <option name="totallyTimeSpent" value="96317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="761" y="-7" width="782" height="838" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19034852" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3922652" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -774,7 +775,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3313783" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34346506" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.4589443" />
       <window_info anchor="bottom" id="Statistic" order="10" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
@@ -1054,36 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="747">
-            <caret line="449" column="3" selection-start-line="449" selection-start-column="3" selection-end-line="449" selection-end-column="3" />
-            <folding>
-              <marker date="1577780560046" expanded="false" signature="5932:6543" ph="..." />
-              <marker date="1577780560046" expanded="true" signature="6545:6577" ph="/**...*/" />
-              <marker date="1577780560046" expanded="true" signature="6637:6701" ph="@{...}" />
-              <marker date="1577780560046" expanded="true" signature="6741:6845" ph="{...}" />
-              <marker date="1577780560046" expanded="true" signature="6851:6883" ph="@{...}" />
-              <marker date="1577780560046" expanded="true" signature="6949:7009" ph="{...}" />
-              <marker date="1577780560046" expanded="true" signature="7116:7561" ph="{...}" />
-              <marker date="1577780560046" expanded="true" signature="7971:7978" ph="{...}" />
-              <marker date="1577780560046" expanded="false" signature="8016:8027" ph=" { " />
-              <marker date="1577780560046" expanded="false" signature="8054:8060" ph=" }" />
-              <marker date="1577780560046" expanded="false" signature="8117:8128" ph=" { " />
-              <marker date="1577780560046" expanded="false" signature="8165:8171" ph=" }" />
-              <marker date="1577780560046" expanded="false" signature="8271:8670" ph="..." />
-              <marker date="1577780560046" expanded="true" signature="8672:8695" ph="/**...*/" />
-              <marker date="1577780560046" expanded="true" signature="8696:8766" ph="@{...}" />
-              <marker date="1577780560046" expanded="true" signature="9243:9352" ph="{...}" />
-              <marker date="1577780560046" expanded="true" signature="9358:9475" ph="/**...*/" />
-              <marker date="1577780560046" expanded="true" signature="9548:10020" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/log-clear.sh" />
     <entry file="file://$USER_HOME$/Desktop/log-default-clear.sh" />
     <entry file="jar://$MAVEN_REPOSITORY$/io/seata/seata-all/1.0.0/seata-all-1.0.0-sources.jar!/io/seata/rm/datasource/ConnectionProxy.java">
@@ -1249,6 +1220,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-56">
           <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README-1.0.0.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="252">
+            <caret line="59" column="3" lean-forward="true" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
+            <folding>
+              <marker date="1582806870625" expanded="false" signature="5958:6569" ph="..." />
+              <marker date="1582806870625" expanded="true" signature="6571:6603" ph="/**...*/" />
+              <marker date="1582806870625" expanded="true" signature="6663:6727" ph="@{...}" />
+              <marker date="1582806870625" expanded="true" signature="6767:6871" ph="{...}" />
+              <marker date="1582806870625" expanded="true" signature="6877:6909" ph="@{...}" />
+              <marker date="1582806870625" expanded="true" signature="6975:7035" ph="{...}" />
+              <marker date="1582806870625" expanded="true" signature="7142:7587" ph="{...}" />
+              <marker date="1582806870625" expanded="true" signature="7997:8004" ph="{...}" />
+              <marker date="1582806870625" expanded="false" signature="8042:8053" ph=" { " />
+              <marker date="1582806870625" expanded="false" signature="8080:8086" ph=" }" />
+              <marker date="1582806870625" expanded="false" signature="8143:8154" ph=" { " />
+              <marker date="1582806870625" expanded="false" signature="8191:8197" ph=" }" />
+              <marker date="1582806870625" expanded="false" signature="8297:8696" ph="..." />
+              <marker date="1582806870625" expanded="true" signature="8698:8721" ph="/**...*/" />
+              <marker date="1582806870625" expanded="true" signature="8722:8792" ph="@{...}" />
+              <marker date="1582806870625" expanded="true" signature="9269:9378" ph="{...}" />
+              <marker date="1582806870625" expanded="true" signature="9384:9501" ph="/**...*/" />
+              <marker date="1582806870625" expanded="true" signature="9574:10046" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

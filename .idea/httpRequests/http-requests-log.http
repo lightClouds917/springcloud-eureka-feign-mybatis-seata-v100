@@ -1,0 +1,104 @@
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=200
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T030117.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=200
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T024807.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=200
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T024737.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=200
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T023256.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=200
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T023107.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T023030.200.txt
+
+###
+
+GET3 http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T023018.405.json
+
+###
+
+GET3 http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T023014.405.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T022816.200.txt
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T022812.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T022644.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T105013.500.json
+
+###
+
+GET http://localhost:8180/order/create?userId=1&productId=1&count=10&money=100
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-02-24T104819.500.json
+
+###
+

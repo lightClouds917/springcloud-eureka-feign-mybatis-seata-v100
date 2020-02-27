@@ -1,0 +1,8 @@
+{
+  "timestamp": 1582512499677,
+  "status": 500,
+  "error": "Internal Server Error",
+  "exception": "feign.RetryableException",
+  "message": "Read timed out executing GET http://storage-server/storage/decrease?productId=1&count=10",
+  "path": "/order/create"
+}
