@@ -1,8 +1,0 @@
-{
-  "timestamp": 1582525814436,
-  "status": 405,
-  "error": "Method Not Allowed",
-  "exception": "org.springframework.web.HttpRequestMethodNotSupportedException",
-  "message": "Request method 'GET3' not supported",
-  "path": "/order/create"
-}
