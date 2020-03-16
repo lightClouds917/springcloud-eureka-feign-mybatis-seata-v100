@@ -1,7 +1,0 @@
-io\seata\sample\service\StorageServiceImpl.class
-io\seata\sample\DataSourceConfiguration.class
-io\seata\sample\StorageServerApplication.class
-io\seata\sample\dao\StorageDao.class
-io\seata\sample\service\StorageService.class
-io\seata\sample\controller\StorageController.class
-io\seata\sample\entity\Storage.class

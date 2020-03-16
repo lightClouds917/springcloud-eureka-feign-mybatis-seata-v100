@@ -1,7 +1,0 @@
-G:\mylearn\wantpr\springcloud-eureka-feign-mybatis-seata-v100\storage_server\src\main\java\io\seata\sample\controller\StorageController.java
-G:\mylearn\wantpr\springcloud-eureka-feign-mybatis-seata-v100\storage_server\src\main\java\io\seata\sample\StorageServerApplication.java
-G:\mylearn\wantpr\springcloud-eureka-feign-mybatis-seata-v100\storage_server\src\main\java\io\seata\sample\entity\Storage.java
-G:\mylearn\wantpr\springcloud-eureka-feign-mybatis-seata-v100\storage_server\src\main\java\io\seata\sample\DataSourceConfiguration.java
-G:\mylearn\wantpr\springcloud-eureka-feign-mybatis-seata-v100\storage_server\src\main\java\io\seata\sample\service\StorageService.java
-G:\mylearn\wantpr\springcloud-eureka-feign-mybatis-seata-v100\storage_server\src\main\java\io\seata\sample\dao\StorageDao.java
-G:\mylearn\wantpr\springcloud-eureka-feign-mybatis-seata-v100\storage_server\src\main\java\io\seata\sample\service\StorageServiceImpl.java

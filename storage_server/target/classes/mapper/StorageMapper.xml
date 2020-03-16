@@ -11,4 +11,8 @@
   <update id="decrease">
     UPDATE storage SET used = used + #{count},residue = residue - #{count} WHERE product_id = #{productId}
   </update>
+
+  <select id="getById" resultType="java.lang.Integer">
+    select  used from storage where product_id = #{productId};
+  </select>
 </mapper>

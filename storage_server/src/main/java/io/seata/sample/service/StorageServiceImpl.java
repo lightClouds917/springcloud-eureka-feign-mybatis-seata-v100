@@ -31,4 +31,11 @@ public class StorageServiceImpl implements StorageService {
         storageDao.decrease(productId,count);
         LOGGER.info("------->扣减库存结束");
     }
+
+    @Override
+    @GlobalTransactional
+    public String getById(Long productId) {
+        Integer used = storageDao.getById(productId);
+        return used.toString();
+    }
 }

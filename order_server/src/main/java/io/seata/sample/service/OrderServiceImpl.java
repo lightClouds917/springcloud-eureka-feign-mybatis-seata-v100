@@ -42,6 +42,8 @@ public class OrderServiceImpl implements OrderService{
         //本地方法
         orderDao.create(order);
 
+//        storageApi.getById(order.getProductId());
+
         //远程方法 扣减库存
         storageApi.decrease(order.getProductId(),order.getCount());
 

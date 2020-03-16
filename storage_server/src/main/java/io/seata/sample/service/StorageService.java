@@ -12,4 +12,6 @@ public interface StorageService {
      * @return
      */
     void decrease(Long productId, Integer count);
+
+    String getById(Long productId);
 }

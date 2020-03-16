@@ -18,4 +18,7 @@ public interface StorageApi {
      */
     @GetMapping(value = "/storage/decrease")
     String decrease(@RequestParam("productId") Long productId, @RequestParam("count") Integer count);
+
+    @GetMapping(value = "/storage/getById")
+    String getById(@RequestParam("productId") Long productId);
 }
