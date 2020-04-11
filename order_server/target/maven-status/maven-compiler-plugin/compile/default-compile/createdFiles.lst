@@ -1,9 +1,0 @@
-io\seata\sample\entity\Order.class
-io\seata\sample\dao\OrderDao.class
-io\seata\sample\OrderServerApplication.class
-io\seata\sample\feign\AccountApi.class
-io\seata\sample\service\OrderService.class
-io\seata\sample\service\OrderServiceImpl.class
-io\seata\sample\controller\OrderController.class
-io\seata\sample\DataSourceConfiguration.class
-io\seata\sample\feign\StorageApi.class

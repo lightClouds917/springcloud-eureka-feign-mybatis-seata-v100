@@ -2,7 +2,6 @@ package io.seata.sample.service;
 
 import io.seata.sample.dao.AccountDao;
 import io.seata.sample.feign.OrderApi;
-import io.seata.spring.annotation.GlobalTransactional;
 import java.math.BigDecimal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +25,6 @@ public class AccountServiceImpl implements AccountService{
      * @param money 金额
      */
     @Override
-    @GlobalTransactional
     public void decrease(Long userId, BigDecimal money) {
         LOGGER.info("------->扣减账户开始account中");
         //模拟超时异常，全局事务回滚 条件：money=200

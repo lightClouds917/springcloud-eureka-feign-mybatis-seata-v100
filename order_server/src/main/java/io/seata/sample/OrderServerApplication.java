@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 /**
  * @author IT云清
  */
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 @MapperScan("io.seata.sample.dao")
 @EnableDiscoveryClient
 @EnableFeignClients
