@@ -16,10 +16,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Edgware.SR4</spring-cloud.version>
-		<spring-cloud-alibaba.version>1.5.1.RELEASE</spring-cloud-alibaba.version>
-		<seata-version>1.1.0</seata-version>
-		<netty.version>4.1.30.Final</netty.version>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
 	</properties>
 
 	<dependencies>
@@ -55,19 +53,7 @@
 			<groupId>io.seata</groupId>
 			<artifactId>seata-spring-boot-starter</artifactId>
 			<version>1.1.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>io.seata</groupId>
-					<artifactId>seata-all</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>io.seata</groupId>
-			<artifactId>seata-all</artifactId>
-			<version>1.1.0</version>
-		</dependency>
-
 	</dependencies>
 
 	<dependencyManagement>
@@ -80,14 +66,14 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-						<!--Spring Cloud Alibaba-->
-						<dependency>
-							<groupId>com.alibaba.cloud</groupId>
-							<artifactId>spring-cloud-alibaba-dependencies</artifactId>
-							<version>${spring-cloud-alibaba.version}</version>
-							<type>pom</type>
-							<scope>import</scope>
-						</dependency>
+<!--						Spring Cloud Alibaba-->
+<!--						<dependency>-->
+<!--							<groupId>com.alibaba.cloud</groupId>-->
+<!--							<artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
+<!--							<version>${spring-cloud-alibaba.version}</version>-->
+<!--							<type>pom</type>-->
+<!--							<scope>import</scope>-->
+<!--						</dependency>-->
 		</dependencies>
 	</dependencyManagement>
 

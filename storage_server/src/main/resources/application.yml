@@ -18,10 +18,7 @@ spring:
         url: jdbc:mysql://116.62.62.26/seata-storage
         password: 14789632
         username: root
-    cloud:
-        alibaba:
-            seata:
-                tx-service-group: default
+        type: com.alibaba.druid.pool.DruidDataSource
 # -----------seata--------------
 # 完整配置项参考：https://github.com/seata/seata/blob/1.1.0/script/client/spring/application.yml
 seata:
@@ -100,7 +97,7 @@ seata:
         eureka:
             application: default
             weight: 1
-            service-url: 192.168.173.95:8761/eureka
+            service-url: http://192.168.173.95:8761/eureka
 #        consul:
 #            cluster: default
 #            server-addr: 127.0.0.1:8500

@@ -4,7 +4,7 @@ eureka:
         prefer-ip-address: true
     client:
         serviceUrl:
-            defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+            defaultZone: http://${eureka.instance.hostname}:8761/eureka
 mybatis:
     mapperLocations: classpath:mapper/*.xml
     typeAliasesPackage: io.seata.sample.entity
@@ -13,15 +13,12 @@ server:
 spring:
     application:
         name: account-server
-    cloud:
-        alibaba:
-            seata:
-                tx-service-group: default # default是事务分组，会据此寻找tc集群
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://116.62.62.26/seata-account
         password: 14789632
         username: root
+        type: com.alibaba.druid.pool.DruidDataSource
 logging:
   level:
     root: info
@@ -29,9 +26,8 @@ logging:
 # 完整配置项参考：https://github.com/seata/seata/blob/1.1.0/script/client/spring/application.yml
 seata:
     enabled: true
-    application-id: applicationName
+    application-id: account-server
     tx-service-group: default
-#    enableAutoDataSourceProxy: true
     enable-auto-data-source-proxy: true
     use-jdk-proxy: false
     client:
@@ -55,7 +51,7 @@ seata:
             exceptionRate: 100
     service:
         vgroup-mapping:
-            default: fsp_tx # defaul是事务分组名称，fsp_tx是tc集群名称
+            default: fsp_tx
         grouplist:
             default: 127.0.0.1:8091
         enable-degrade: false
@@ -84,7 +80,7 @@ seata:
     registry:
         type: eureka
         eureka:
-            application: default
+            application: fsp_tx
             weight: 1
-            service-url: 192.168.173.95:8761/eureka
+            service-url: http://192.168.173.95:8761/eureka
 
