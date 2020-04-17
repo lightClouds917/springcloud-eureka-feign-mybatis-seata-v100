@@ -27,7 +27,7 @@ logging:
 seata:
     enabled: true
     application-id: account-server
-    tx-service-group: default
+    tx-service-group: default  # default是事务分组名称，可自定义
     enable-auto-data-source-proxy: true
     use-jdk-proxy: false
     client:
@@ -51,7 +51,7 @@ seata:
             exceptionRate: 100
     service:
         vgroup-mapping:
-            default: fsp_tx
+            default: fsp_tx # default是事务分组名称，可自定义；fsp_tx是tc集群名称
         grouplist:
             default: 127.0.0.1:8091
         enable-degrade: false

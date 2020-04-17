@@ -23,8 +23,8 @@ spring:
 # 完整配置项参考：https://github.com/seata/seata/blob/1.1.0/script/client/spring/application.yml
 seata:
     enabled: true
-    application-id: applicationName
-    tx-service-group: default
+    application-id: storage-server
+    tx-service-group: default # default是事务分组名称，可自定义
     enable-auto-data-source-proxy: true
     use-jdk-proxy: false
     client:
@@ -48,7 +48,7 @@ seata:
             exceptionRate: 100
     service:
         vgroup-mapping:
-            default: fsp_tx # defaul是事务分组名称，fsp_tx是tc集群名称
+            default: fsp_tx # default是事务分组名称，可自定义；fsp_tx是tc集群名称
         grouplist:
             default: 127.0.0.1:8091
         enable-degrade: false
@@ -74,61 +74,12 @@ seata:
         enable-client-batch-send-request: true
     config:
         type: file
-    #        consul:
-    #            server-addr: 127.0.0.1:8500
-    #        apollo:
-    #            apollo-meta: http://192.168.1.204:8801
-    #            app-id: seata-server
-    #            namespace: application
-    #        etcd3:
-    #            server-addr: http://localhost:2379
-    #        nacos:
-    #            namespace:
-    #            serverAddr: localhost
-    #            group: SEATA_GROUP
-    #        zk:
-    #            server-addr: 127.0.0.1:2181
-    #            session-timeout: 6000
-    #            connect-timeout: 2000
-    #            username: ""
-    #            password: ""
     registry:
         type: eureka
         eureka:
             application: default
             weight: 1
             service-url: http://192.168.173.95:8761/eureka
-#        consul:
-#            cluster: default
-#            server-addr: 127.0.0.1:8500
-#        etcd3:
-#            cluster: default
-#            serverAddr: http://localhost:2379
-#        nacos:
-#            cluster: default
-#            server-addr: localhost
-#            namespace:
-#        redis:
-#            server-addr: localhost:6379
-#            db: 0
-#            password:
-#            cluster: default
-#            timeout: 0
-#        sofa:
-#            server-addr: 127.0.0.1:9603
-#            application: default
-#            region: DEFAULT_ZONE
-#            datacenter: DefaultDataCenter
-#            cluster: default
-#            group: SEATA_GROUP
-#            addressWaitTime: 3000
-#        zk:
-#            cluster: default
-#            server-addr: 127.0.0.1:2181
-#            session-timeout: 6000
-#            connect-timeout: 2000
-#            username: ""
-#            password: ""
 # -----------seata--------------
 
 
