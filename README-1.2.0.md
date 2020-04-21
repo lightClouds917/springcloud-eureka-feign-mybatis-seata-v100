@@ -1,17 +1,20 @@
-# seata 1.0入门教程
+# seata 1.2.0整合教程
 
-##### 本教程基于seata 1.0.0版本
+东半球最好用的分布式事务框架1.2.0正式发布，本文将详细的介绍在SpringCloud全家桶技术选型下，如何快速整合使用seata.
+
+##### 本教程基于seata 1.2.0版本
 
 ### 技术选型及版本
-spring-cloud-starter-alibaba-seata
 
-spring-cloud-alibaba：1.5.1.RELEASE
+springcloud：Greenwich.SR1
 
-springcloud：Edgware.SR4
+spring-cloud-alibaba：2.1.1.RELEASE
 
-seata-all：1.0.0
+spring-cloud-alibaba-seata：2.2.0.RELEASE
 
-springboot：1.5.4
+seata-spring-boot-starter：1.2.0
+
+springboot：2.2.0.RELEASE
 
 mybatis-spring-boot-starter.version：2.0.0
 
@@ -22,90 +25,76 @@ java：jdk8
 
 下载包：https://github.com/seata/seata/releases
 
-解压：tar -xzvf seata-server-1.0.0.tar.gz
+解压：tar -xzvf seata-server-1.2.0.tar.gz
 
 修改配置：
 
 #### 1.配置registry.conf
 
 ```java
-[root@jr-test conf]# cat registry.conf 
-//注册中心
+//注册中心配置
 registry {
   # file 、nacos 、eureka、redis、zk、consul、etcd3、sofa
-  type = "eureka" //注册中心类型
-
-  nacos {
-    serverAddr = "localhost"
-    namespace = ""
-    cluster = "default"
-  }
+  type = "eureka"
   eureka {
-    serviceUrl = "http://192.xx.xx.xx:8761/eureka" //注册中心地址
-    application = "fsp_tx" //tc注册时的名称
+    serviceUrl = "http://192.xx.xx.xx:8761/eureka"
+    application = "fsp_tx" //tc注册时服务名
     weight = "1"
   }
-  //......支持多种
+
 }
-//配置中心
+
+//配置中心配置
 config {
   # file、nacos 、apollo、zk、consul、etcd3
-  type = "file" //配置中心类型
+  type = "file"
   file {
-    name = "file.conf" //
+    name = "file.conf"
   }
-  //......支持多种
 }
 
 ```
+注册中心和配置中心均支持多种。
 
 #### 2.配置file.conf
 
 ```java
-[root@jr-test conf]# cat file.conf
-service {
-  #transaction service group mapping
-  vgroup_mapping.default = "fsp_tx"  //事务分组，非常重要，client和tc一定要一致，default是个自定义的分组名称
-  #only support when registry.type=file, please don't set multiple addresses
-  default.grouplist = "127.0.0.1:8091"
-  #disable seata
-  disableGlobalTransaction = false
-}
-
 ## transaction log store, only used in seata-server
 store {
   ## store mode: file、db
-  mode = "db" //事务日志存储模式
-
-  ## file store property
-  file {
-    ## store location dir
-    dir = "sessionStore"
-  }
+  mode = "db"
 
   ## database store property
   db {
     ## the implement of javax.sql.DataSource, such as DruidDataSource(druid)/BasicDataSource(dbcp) etc.
-    datasource = "dbcp"
-    ## mysql/oracle/h2/oceanbase etc.
-    db-type = "mysql"
-    driver-class-name = "com.mysql.jdbc.Driver"
-    url = "jdbc:mysql://192.xx.xx.xx:3306/seata" // tc的数据库,可自定义命名，对应就好
-    user = "root"
-    password = "xxx"
+    datasource = "druid"
+    ## mysql/oracle/postgresql/h2/oceanbase etc.
+    dbType = "mysql"
+    driverClassName = "com.mysql.jdbc.Driver"
+    url = "jdbc:mysql://192.168.173.95:3306/seata-server" //tc的数据库,可自定义命名，对应就好
+    user = "mysql"
+    password = "runlion@123"
+    minConn = 5
+    maxConn = 30
+    globalTable = "global_table"
+    branchTable = "branch_table"
+    lockTable = "lock_table"
+    queryLimit = 100
+    maxWait = 5000
   }
 }
+
 ```
 
 #### 3.建表
 
-全局事务会话信息由3块内容构成：
+全局事务过程中，会涉及3块内容：
 
 - 全局事务 global_table
 - 分支事务 branch_table
 - 全局锁  lock_table 
 
-建表语句在：https://github.com/seata/seata/tree/develop/script/server/db
+脚本在：https://github.com/seata/seata/tree/1.2.0/script，请选择对应数据库和对应版本！
 
 #### 4.启动tc
 
@@ -119,7 +108,7 @@ nohup sh seata-server.sh -h xx.xx.xx.xx -p 8091 -m db -n 1 &
 
 -h: 注册到注册中心的ip
 
- -p: Server rpc 监听端口 
+-p: Server rpc 监听端口 
 
 -m: 全局事务会话信息存储模式，file、db，优先读取启动参数 
 
@@ -127,149 +116,112 @@ nohup sh seata-server.sh -h xx.xx.xx.xx -p 8091 -m db -n 1 &
 
 -e: 多环境配置参考 http://seata.io/en-us/docs/ops/multi-configuration-isolation.html 
 
+高可用部署可参考：https://seata.io/zh-cn/docs/ops/deploy-ha.html
+
 ### 2.client端引入seata依赖
-
-目前有三种方式，相应的支持程度不同：
-
-| 依赖                       | 支持yml配置 | 实现xid传递 | 支持数据源自动代理 | 自动初始化GlobalTransactionScanner入口 |
-| -------------------------- | ----------- | ----------- | ------------------ | -------------------------------------- |
-| seata-all                  | 否          | 否          | 是                 | 否                                     |
-| seata-spring-boot-starter  | 是          | 否          | 是                 | 是                                     |
-| spring-cloud-alibaba-seata | 否          | 是          | 是                 | 是                                     |
-
-不建议用户仅引入seata-all，需要自行实现的东西太多。
-
-spring-cloud-alibaba-seata，2.1.0内嵌seata-all 0.7.1，2.1.1内嵌seata-all 0.9.0。建议排除掉，引入1.0；
 
 我们这里以引入spring-cloud-alibaba-seata 依赖为例，下面仅展示与seata相关的依赖：
 
 ```java
-	<properties>
-		<spring-cloud.version>Edgware.SR4</spring-cloud.version>
-		<spring-cloud-alibaba.version>1.5.1.RELEASE</spring-cloud-alibaba.version>
-		<seata-version>1.0.0</seata-version>
-	</properties>
-	<dependencies>
-		<!--seata-all-->
-		<dependency>
-			<groupId>io.seata</groupId>
-			<artifactId>seata-all</artifactId>
-			<version>${seata-version}</version>
-		</dependency>
-		<!--sca-seata-->
-		<dependency>
-			<groupId>com.alibaba.cloud</groupId>
-			<artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-		</dependency>
-	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<!--Spring Cloud-->
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!--Spring Cloud Alibaba，包含seata-all 0.9,这里排除掉，换为1.0-->
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
-				<version>${spring-cloud-alibaba.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-				<exclusions>
-					<exclusion>
-						<artifactId>seata-all</artifactId>
-						<groupId>io.seata</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+<!--seata-->
+<dependency>
+  <groupId>com.alibaba.cloud</groupId>
+  <artifactId>spring-cloud-alibaba-seata</artifactId>
+  <version>2.2.0.RELEASE</version>
+//如果内嵌最新版本starter，我们不用排除再引入  
+  <exclusions>
+    <exclusion>
+      <groupId>io.seata</groupId>
+      <artifactId>seata-spring-boot-starter</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency>
+<dependency>
+  <groupId>io.seata</groupId>
+  <artifactId>seata-spring-boot-starter</artifactId>
+  <version>1.2.0</version>
+</dependency>
 ```
-
-
 
 ### 3.client端引入配置文件
 
-seata server端和client端的脚本和配置，都汇总在这里，client端整合时，去找对应的文件复制过来修改。
+seata server端和client端的脚本和配置，都汇总在这里，client端整合时，去找对应版本和技术选型的文件复制过来修改。
 
-https://github.com/seata/seata/tree/develop/script
+https://github.com/seata/seata/tree/1.2.0/script
 
-#### 1.修改bootstrap.yml
+#### 1.修改配置文件
 
-添加事务分组
-
+1.1.0开始，支持Springboot的配置文件application.yml,我们不用再单独创建file.conf和registry.conf，极大的解放了生产力。
+这里仅贴上seata相关配置：
+注意:很多配置我们采用默认值即可，入门测试时需要关注的配置项并不多，每个配置项的作用请参考：https://seata.io/zh-cn/docs/user/configurations.html
 ```java
-spring:
-  cloud:
-    alibaba:
-      seata:
-        tx-service-group: default //这个default是事务分组名称，与server端的事务分组名称保持一致
+# -----------seata--------------
+# 完整配置项参考：https://github.com/seata/seata/blob/1.1.0/script/client/spring/application.yml
+seata:
+    enabled: true
+    application-id: account-server //应用名称
+    tx-service-group: default  //事务分组，非常重要，client和tc一定要一致，default是个自定义的事务分组名称【易出错点1】
+    enable-auto-data-source-proxy: true //启用自动数据源代理
+    use-jdk-proxy: false
+    excludes-for-auto-proxying: firstClassNameForExclude,secondClassNameForExclude
+    client:
+        rm:
+            async-commit-buffer-limit: 1000
+            report-retry-count: 5
+            table-meta-check-enable: false
+            report-success-enable: false
+            lock:
+                retry-interval: 10
+                retry-times: 30
+                retry-policy-branch-rollback-on-conflict: true
+        tm:
+            commit-retry-count: 5
+            rollback-retry-count: 5
+        undo:
+            data-validation: true
+            log-serialization: jackson
+            log-table: undo_log
+        log:
+            exceptionRate: 100
+    service:
+        vgroup-mapping:
+            default: fsp_tx  //事务分组，非常重要，client和tc一定要一致，default是个自定义的事务分组名称,fsp_tx是tc向注册中心注册的服务名【易出错点1】
+        grouplist:
+            default: 127.0.0.1:8091
+        enable-degrade: false
+        disable-global-transaction: false
+    transport:
+        shutdown:
+            wait: 3
+        thread-factory:
+            boss-thread-prefix: NettyBoss
+            worker-thread-prefix: NettyServerNIOWorker
+            server-executor-thread-prefix: NettyServerBizHandler
+            share-boss-worker: false
+            client-selector-thread-prefix: NettyClientSelector
+            client-selector-thread-size: 1
+            client-worker-thread-prefix: NettyClientWorkerThread
+            worker-thread-size: default
+            boss-thread-size: 1
+        type: TCP
+        server: NIO
+        heartbeat: true
+        serialization: seata
+        compressor: none
+        enable-client-batch-send-request: true
+    config:
+        type: file // 配置中心采用file形式
+    registry:
+        type: eureka //注册中心使用eureka
+        eureka:
+            application: fsp_tx //
+            weight: 1
+            service-url: http://192.xx.xx.xx:8761/eureka //注册中心地址
+# -----------seata--------------
+
 ```
 
-这个分组名称自定义，但是seata server端，client端要保持一致。
 
-#### 2.配置file.conf
-
-引入配置文件，并修改相关配置，由于有很多配置项，不是每个都需要去改一遍，这里只是改动少数，让你先能整合进去跑起来，其他的参数后面再自己调整。
-
-file.conf
-
-```java
-//省略很多
-service {
-  #transaction service group mapping
-  vgroup_mapping.default = "fsp_tx"  //这个default是事务分组名称，与server端的事务分组名称保持一致
-  #only support when registry.type=file, please don't set multiple addresses
-  default.grouplist = "127.0.0.1:8091"
-  #degrade, current not support
-  enableDegrade = false
-  #disable seata
-  disableGlobalTransaction = false
-}
-client {
-    //省略很多
-  rm {
-    report.success.enable = true //一阶段成功后是否上报tc，这个配置可以提高性能
-  }
-  support {
-    # auto proxy the DataSource bean //数据源自动代理
-    spring.datasource.autoproxy = false
-  }
-}
-
-```
-
-#### 3.配置registry.conf
-
-注册中心和配置中心，都支持多种，按照自己的技术选型，修改对应的配置。
-
-```java
-registry {
-  # file 、nacos 、eureka、redis、zk
-  type = "eureka"
-  eureka {
-    serviceUrl = "http://192.xx.xx.xx:8761/eureka"
-    application = "fsp_tx" 
-    weight = "1"
-  }
-    //省略
-}
-
-config {
-  # file、nacos 、apollo、zk
-  type = "file"
-  file {
-    name = "file.conf"
-  }
-    //省略
-}
-
-```
 
 ### 4.配置数据源头代理
 

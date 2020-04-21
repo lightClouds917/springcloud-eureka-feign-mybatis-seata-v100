@@ -23,64 +23,113 @@ logging:
   level:
     root: info
 # -----------seata--------------
-# 完整配置项参考：https://github.com/seata/seata/blob/1.1.0/script/client/spring/application.yml
 seata:
     enabled: true
-    application-id: account-server
-    tx-service-group: default  # default是事务分组名称，可自定义
-    enable-auto-data-source-proxy: true
+    application-id: account-server #服务名
+    tx-service-group: default # default是自定义的事务分组名称
+    enable-auto-data-source-proxy: true # 启用自动数据源代理
     use-jdk-proxy: false
-    client:
-        rm:
-            async-commit-buffer-limit: 1000
-            report-retry-count: 5
-            table-meta-check-enable: false
-            report-success-enable: false
-            lock:
-                retry-interval: 10
-                retry-times: 30
-                retry-policy-branch-rollback-on-conflict: true
-        tm:
-            commit-retry-count: 5
-            rollback-retry-count: 5
-        undo:
-            data-validation: true
-            log-serialization: jackson
-            log-table: undo_log
-        log:
-            exceptionRate: 100
+#    excludes-for-auto-proxying:
+#    client:
+#        rm:
+#            async-commit-buffer-limit: 1000
+#            report-retry-count: 5
+#            table-meta-check-enable: false
+#            report-success-enable: false
+#            saga-branch-register-enable: false
+#            lock:
+#                retry-interval: 10
+#                retry-times: 30
+#                retry-policy-branch-rollback-on-conflict: true
+#        tm:
+#            commit-retry-count: 5
+#            rollback-retry-count: 5
+#        undo:
+#            data-validation: true
+#            log-serialization: jackson
+#            log-table: undo_log
+#        log:
+#            exceptionRate: 100
     service:
         vgroup-mapping:
-            default: fsp_tx # default是事务分组名称，可自定义；fsp_tx是tc集群名称
-        grouplist:
-            default: 127.0.0.1:8091
-        enable-degrade: false
-        disable-global-transaction: false
-    transport:
-        shutdown:
-            wait: 3
-        thread-factory:
-            boss-thread-prefix: NettyBoss
-            worker-thread-prefix: NettyServerNIOWorker
-            server-executor-thread-prefix: NettyServerBizHandler
-            share-boss-worker: false
-            client-selector-thread-prefix: NettyClientSelector
-            client-selector-thread-size: 1
-            client-worker-thread-prefix: NettyClientWorkerThread
-            worker-thread-size: default
-            boss-thread-size: 1
-        type: TCP
-        server: NIO
-        heartbeat: true
-        serialization: seata
-        compressor: none
-        enable-client-batch-send-request: true
+            default: fsp_tx # default是自定义的事务分组名称，fsp_tx是tc注册到注册中心的服务名称
+#        grouplist:
+#            default: 127.0.0.1:8091 # 	仅注册中心为file时使用
+        enable-degrade: false # 是否启用降级
+        disable-global-transaction: false # 是否禁用全局事务
+#    transport:
+#        shutdown:
+#            wait: 3
+#        thread-factory:
+#            boss-thread-prefix: NettyBoss
+#            worker-thread-prefix: NettyServerNIOWorker
+#            server-executor-thread-prefix: NettyServerBizHandler
+#            share-boss-worker: false
+#            client-selector-thread-prefix: NettyClientSelector
+#            client-selector-thread-size: 1
+#            client-worker-thread-prefix: NettyClientWorkerThread
+#            worker-thread-size: default
+#            boss-thread-size: 1
+#        type: TCP
+#        server: NIO
+#        heartbeat: true
+#        serialization: seata
+#        compressor: none
+#        enable-client-batch-send-request: true
     config:
-        type: file
+        type: file # 配置中心为file模式
+#        consul:
+#            server-addr: 127.0.0.1:8500
+#        apollo:
+#            apollo-meta: http://192.168.1.204:8801
+#            app-id: seata-server
+#            namespace: application
+#        etcd3:
+#            server-addr: http://localhost:2379
+#        nacos:
+#            namespace:
+#            serverAddr: localhost
+#            group: SEATA_GROUP
+#            userName: ""
+#            password: ""
+#        zk:
+#            server-addr: 127.0.0.1:2181
+#            session-timeout: 6000
+#            connect-timeout: 2000
+#            username: ""
+#            password: ""
     registry:
-        type: eureka
+        type: eureka # 注册中心为eureka
         eureka:
-            application: fsp_tx
             weight: 1
-            service-url: http://192.168.173.95:8761/eureka
+            service-url: http://192.168.173.95:8761/eureka # 注册中心地址
+#        consul:
+#            server-addr: 127.0.0.1:8500
+#        etcd3:
+#            serverAddr: http://localhost:2379
+#        nacos:
+#            application: seata-server
+#            server-addr: localhost
+#            namespace:
+#            userName: ""
+#            password: ""
+#        redis:
+#            server-addr: localhost:6379
+#            db: 0
+#            password:
+#            timeout: 0
+#        sofa:
+#            server-addr: 127.0.0.1:9603
+#            region: DEFAULT_ZONE
+#            datacenter: DefaultDataCenter
+#            group: SEATA_GROUP
+#            addressWaitTime: 3000
+#            application: default
+#        zk:
+#            server-addr: 127.0.0.1:2181
+#            session-timeout: 6000
+#            connect-timeout: 2000
+#            username: ""
+#            password: ""
 
+# -----------seata--------------
