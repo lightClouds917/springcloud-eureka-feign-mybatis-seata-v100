@@ -152,278 +152,127 @@ https://github.com/seata/seata/tree/1.2.0/script
 #### 1.修改配置文件
 
 1.1.0开始，支持Springboot的配置文件application.yml,我们不用再单独创建file.conf和registry.conf，极大的解放了生产力。
-这里仅贴上seata相关配置：
+这里仅贴上我们快速启动的必要配置，全配置项，请参考此项目配置文件。
+
 注意:很多配置我们采用默认值即可，入门测试时需要关注的配置项并不多，每个配置项的作用请参考：https://seata.io/zh-cn/docs/user/configurations.html
 ```java
 # -----------seata--------------
-# 完整配置项参考：https://github.com/seata/seata/blob/1.1.0/script/client/spring/application.yml
 seata:
     enabled: true
-    application-id: account-server //应用名称
-    tx-service-group: default  //事务分组，非常重要，client和tc一定要一致，default是个自定义的事务分组名称【易出错点1】
-    enable-auto-data-source-proxy: true //启用自动数据源代理
+    application-id: storage-server #服务名
+    tx-service-group: default # default是自定义的事务分组名称
+    enable-auto-data-source-proxy: true # 启用自动数据源代理
     use-jdk-proxy: false
-    excludes-for-auto-proxying: firstClassNameForExclude,secondClassNameForExclude
-    client:
-        rm:
-            async-commit-buffer-limit: 1000
-            report-retry-count: 5
-            table-meta-check-enable: false
-            report-success-enable: false
-            lock:
-                retry-interval: 10
-                retry-times: 30
-                retry-policy-branch-rollback-on-conflict: true
-        tm:
-            commit-retry-count: 5
-            rollback-retry-count: 5
-        undo:
-            data-validation: true
-            log-serialization: jackson
-            log-table: undo_log
-        log:
-            exceptionRate: 100
     service:
         vgroup-mapping:
-            default: fsp_tx  //事务分组，非常重要，client和tc一定要一致，default是个自定义的事务分组名称,fsp_tx是tc向注册中心注册的服务名【易出错点1】
-        grouplist:
-            default: 127.0.0.1:8091
-        enable-degrade: false
-        disable-global-transaction: false
-    transport:
-        shutdown:
-            wait: 3
-        thread-factory:
-            boss-thread-prefix: NettyBoss
-            worker-thread-prefix: NettyServerNIOWorker
-            server-executor-thread-prefix: NettyServerBizHandler
-            share-boss-worker: false
-            client-selector-thread-prefix: NettyClientSelector
-            client-selector-thread-size: 1
-            client-worker-thread-prefix: NettyClientWorkerThread
-            worker-thread-size: default
-            boss-thread-size: 1
-        type: TCP
-        server: NIO
-        heartbeat: true
-        serialization: seata
-        compressor: none
-        enable-client-batch-send-request: true
+            default: fsp_tx # default是自定义的事务分组名称，fsp_tx是tc注册到注册中心的服务名称
+        #        grouplist:
+        #            default: 127.0.0.1:8091 # 	仅注册中心为file时使用
+        enable-degrade: false # 是否启用降级
+        disable-global-transaction: false # 是否禁用全局事务
     config:
-        type: file // 配置中心采用file形式
+        type: file # 配置中心为file模式
     registry:
-        type: eureka //注册中心使用eureka
+        type: eureka # 注册中心为eureka
         eureka:
-            application: fsp_tx //
             weight: 1
-            service-url: http://192.xx.xx.xx:8761/eureka //注册中心地址
+            service-url: http://192.168.173.95:8761/eureka # 注册中心地址
+
 # -----------seata--------------
 
 ```
-
-
-
-### 4.配置数据源头代理
-
-如果支持自动代理，那就开启配置就好，这里示例下使用mysql和mybatis时，如何自行代理数据源。
-
+#### 请注意server和client端的事务分组配置一致！！！
+#### 请注意server和client端的事务分组配置一致！！！
+#### 请注意server和client端的事务分组配置一致！！！
+#### 请注意server和client端的事务分组配置一致！！！
+#### 请注意server和client端的事务分组配置一致！！！
+#### 请注意server和client端的事务分组配置一致！！！
+！！！这里强调1万遍！！！不懂事务分组配置作用的请仔细读读：https://seata.io/zh-cn/docs/user/transaction-group.html
+事务分组配置不对，会出现类似
 ```java
-package io.seata.sample;
-
-import com.alibaba.druid.pool.DruidDataSource;
-import io.seata.rm.datasource.DataSourceProxy;
-import javax.sql.DataSource;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-
-/**
- * 数据源代理
- * @author IT云清
- */
-@Configuration
-public class DataSourceConfiguration {
-
-    @Bean
-    @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource druidDataSource(){
-        DruidDataSource druidDataSource = new DruidDataSource();
-        return druidDataSource;
-    }
-
-    @Primary
-    @Bean("dataSource")
-    public DataSourceProxy dataSource(DataSource druidDataSource){
-        return new DataSourceProxy(druidDataSource);
-    }
-
-    @Bean
-    public SqlSessionFactory sqlSessionFactory(DataSourceProxy dataSourceProxy)throws Exception{
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dataSourceProxy);
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources("classpath*:/mapper/*.xml"));
-        sqlSessionFactoryBean.setTransactionFactory(new SpringManagedTransactionFactory());
-        return sqlSessionFactoryBean.getObject();
-    }
-}
-
+no available service 'null' found......
 ```
-
-
-
-### 5.实现xid传递
-
-如果你引入的依赖和技术选型，没有实现xid传递等逻辑，你需要参考源码integration文件夹下的各种rpc实现 module。
-
-https://github.com/seata/seata/tree/develop/integration
-
-### 6.实现scanner入口
-
-如果你引入的依赖和技术选型，没有实现初始化GlobalTransactionScanner逻辑，可以自行实现如下：
-
-1.SeataProperties.java
-
 ```java
-@ConfigurationProperties("spring.cloud.alibaba.seata")
-public class SeataProperties {
-    private String txServiceGroup;
-    public SeataProperties() {
-    }
-    public String getTxServiceGroup() {
-        return this.txServiceGroup;
-    }
-    public void setTxServiceGroup(String txServiceGroup) {
-        this.txServiceGroup = txServiceGroup;
-    }
-}
-```
-
-2.初始化GlobalTransactionScanner
-
-```java
-package com.runlion.fsp.credit.seata.config;
-
-import com.runlion.fsp.credit.seata.SeataProperties;
-import io.seata.spring.annotation.GlobalTransactionScanner;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-/**
- * @author IT云清
- */
-@Configuration
-@EnableConfigurationProperties({SeataProperties.class})
-public class GlobalTransactionAutoConfiguration {
-    private static final String APPLICATION_NAME_PREFIX = "spring.application.name";
-    private static final String DEFAULT_TX_SERVICE_GROUP_SUFFIX = "-seata-service-group";
-    private final ApplicationContext applicationContext;
-    private final SeataProperties seataProperties;
-    public GlobalTransactionAutoConfiguration(
-            ApplicationContext applicationContext,
-            SeataProperties seataProperties) {
-        this.applicationContext = applicationContext;
-        this.seataProperties = seataProperties;
-    }
-
-    /**
-     * If there is no txServiceGroup,use the default
-     * @return GlobalTransactionScanner the entrance
-     */
-    @Bean
-    public GlobalTransactionScanner globalTransactionScanner(){
-        String applicationName = this.applicationContext.getEnvironment().getProperty(APPLICATION_NAME_PREFIX);
-        String txServiceGroup = seataProperties.getTxServiceGroup();
-        if(StringUtils.isEmpty(txServiceGroup)){
-            txServiceGroup = applicationName + DEFAULT_TX_SERVICE_GROUP_SUFFIX;
-            this.seataProperties.setTxServiceGroup(txServiceGroup);
-        }
-        return new GlobalTransactionScanner(applicationName,txServiceGroup);
-    }
-}
-
+no available service 'default' found......
 ```
 
 ### 7.建表
 
 如果要使用seata分布式事务，当前服务就需要建一张undolog表。
 
-建表语句参考：https://github.com/seata/seata/tree/develop/script/client/at/db
+建表语句参考：https://github.com/seata/seata/tree/1.2.0/script
 
 ### 8.使用
 
 - 1.@GlobalTransaction 全局事务注解
 - 2.@GlobalLock 防止脏读和脏写，又不想纳入全局事务管理时使用。（不需要rpc和xid传递等成本）
 
-### 9.辅助信息
+### 9.典型日志
 
 ##### 如果发现数据不一致，可以参考下面的一些典型日志，或者查找关键字，比如Successfully begin global transaction，Successfully register branch xid = 。。。可以辅助你确认你的配置是否正确有效，各分支事务是否注册，纳入全局管理。
 
-#### 1.client端如果正常启动，在server端会有如下日志，否则，请再检查配置：
+#### 1.client端正常启动日志
+server端日志：
 ```java
-2019-12-31 15:38:44.170 INFO [ServerHandlerThread_1_500]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegRmMessage:123 -rm register success,message:RegisterRMRequest{resourceIds='jdbc:mysql://116.xx.xx.xx/seata-account', applicationId='account-server', transactionServiceGroup='default'},channel:[id: 0xb58488ac, L:/192.xx.xx.xx:8091 - R:/192.xx.xx.xx:13641]
-2019-12-31 15:38:44.968 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegTmMessage:140 -checkAuth for client:192.xx.xx.xx:13644,vgroup:default,applicationId:account-server
+2020-04-21 20:28:49.192 INFO [ServerHandlerThread_1_500]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegRmMessage:127 -RM register success,message:RegisterRMRequest{resourceIds='jdbc:mysql://116.xx.xx.xx/seata-order', applicationId='order-server', transactionServiceGroup='default'},channel:[id: 0x4e101b0b, L:/192.168.158.247:8091 - R:/192.168.158.80:7482]
+2020-04-21 20:29:43.532 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegTmMessage:153 -TM register success,message:RegisterTMRequest{applicationId='order-server', transactionServiceGroup='default'},channel:[id: 0x82ea0fcd, L:/192.168.158.247:8091 - R:/192.168.158.80:7529]
+
+```
+client日志：
+```java
+有删减
+......
+2020-04-21 20:28:43.824  INFO 26032 --- [           main] .s.s.a.d.SeataAutoDataSourceProxyCreator : Auto proxy of [dataSource]
+......
+2020-04-21 20:28:46.879  INFO 26032 --- [           main] i.s.c.r.netty.NettyClientChannelManager  : will connect to 192.168.158.247:8091
+2020-04-21 20:28:46.879  INFO 26032 --- [           main] io.seata.core.rpc.netty.RmRpcClient      : RM will register :jdbc:mysql://116.62.62.26/seata-order
+2020-04-21 20:28:46.882  INFO 26032 --- [           main] i.s.core.rpc.netty.NettyPoolableFactory  : NettyPool create channel to transactionRole:RMROLE,address:192.168.158.247:8091,msg:< RegisterRMRequest{resourceIds='jdbc:mysql://116.xx.xx.xx/seata-order', applicationId='order-server', transactionServiceGroup='default'} >
+2020-04-21 20:28:48.548  INFO 26032 --- [           main] io.seata.core.rpc.netty.RmRpcClient      : register RM success. server version:1.2.0,channel:[id: 0xa6491f48, L:/192.168.158.80:7482 - R:/192.168.158.247:8091]
+2020-04-21 20:28:48.557  INFO 26032 --- [           main] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 102 ms, version:1.2.0,role:RMROLE,channel:[id: 0xa6491f48, L:/192.168.158.80:7482 - R:/192.168.158.247:8091]
+2020-04-21 20:28:50.848  INFO 26032 --- [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+......
+2020-04-21 20:29:42.845  INFO 26032 --- [imeoutChecker_1] io.seata.core.rpc.netty.TmRpcClient      : register TM success. server version:1.2.0,channel:[id: 0xb872c071, L:/192.168.158.80:7529 - R:/192.168.158.247:8091]
+2020-04-21 20:29:42.845  INFO 26032 --- [imeoutChecker_1] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 7 ms, version:1.2.0,role:TMROLE,channel:[id: 0xb872c071, L:/192.168.158.80:7529 - R:/192.168.158.247:8091]
+
 
 ```
 
 #### 2.全局事务提交成功,server端会有日志如下：
 ```java
-2019-12-31 16:00:31.209 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage timeout=60000,transactionName=fsp-create-order
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:31.211 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.begin:154 -Successfully begin global transaction xid = 192.xx.xx.xx:8091:2031075692
-2019-12-31 16:00:31.253 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-order,lockKey=order:877
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:31.257 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075694
-2019-12-31 16:00:31.278 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchId=2031075694,resourceId=null,status=PhaseOne_Done,applicationData=null
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:31.283 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075694
-2019-12-31 16:00:31.339 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-storage,lockKey=storage:1
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:31.344 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075697
-2019-12-31 16:00:31.363 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchId=2031075697,resourceId=null,status=PhaseOne_Done,applicationData=null
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:31.366 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075697
-2019-12-31 16:00:32.237 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-account,lockKey=account:1
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:32.242 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075701
-2019-12-31 16:00:32.294 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,branchId=2031075701,resourceId=null,status=PhaseOne_Done,applicationData=null
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:32.327 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075692, branchId = 2031075701
-2019-12-31 16:00:32.368 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075692,extraData=null
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:00:32.775 INFO [AsyncCommitting_1]io.seata.server.coordinator.DefaultCore.doGlobalCommit:316 -Global[192.xx.xx.xx:8091:2031075692] committing is successfully done.
+2020-04-21 20:36:30.992 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage timeout=60000,transactionName=fsp_create_order
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:36:30.993 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCoordinator.doGlobalBegin:159 -Begin new global transaction applicationId: order-server,transactionServiceGroup: default, transactionName: fsp_create_order,timeout:60000,xid:192.168.158.247:8091:2009659537
+2020-04-21 20:36:31.026 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage xid=192.168.158.247:8091:2009659537,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-order,lockKey=order:1226
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:36:31.031 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.AbstractCore.lambda$branchRegister$0:87 -Register branch successfully, xid = 192.168.158.247:8091:2009659537, branchId = 2009659539, resourceId = jdbc:mysql://116.62.62.26/seata-order ,lockKeys = order:1226
+2020-04-21 20:36:31.108 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage xid=192.168.158.247:8091:2009659537,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-storage,lockKey=storage:1
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:36:31.113 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.AbstractCore.lambda$branchRegister$0:87 -Register branch successfully, xid = 192.168.158.247:8091:2009659537, branchId = 2009659541, resourceId = jdbc:mysql://116.62.62.26/seata-storage ,lockKeys = storage:1
+2020-04-21 20:36:31.192 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage xid=192.168.158.247:8091:2009659537,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-account,lockKey=account:1
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:36:31.200 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.AbstractCore.lambda$branchRegister$0:87 -Register branch successfully, xid = 192.168.158.247:8091:2009659537, branchId = 2009659543, resourceId = jdbc:mysql://116.62.62.26/seata-account ,lockKeys = account:1
+2020-04-21 20:36:31.235 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage xid=192.168.158.247:8091:2009659537,extraData=null
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:36:31.788 INFO [AsyncCommitting_1]io.seata.server.coordinator.DefaultCore.doGlobalCommit:240 -Committing global transaction is successfully done, xid = 192.168.158.247:8091:2009659537.
 
 ```
 
 #### 3.全局事务提交失败,server端会有日志如下：
 ```java
-2019-12-31 16:16:50.327 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage timeout=60000,transactionName=fsp-create-order
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:16:50.329 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.begin:154 -Successfully begin global transaction xid = 192.xx.xx.xx:8091:2031075709
-2019-12-31 16:16:50.408 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-order,lockKey=order:878
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:16:50.412 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075711
-2019-12-31 16:16:50.432 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchId=2031075711,resourceId=null,status=PhaseOne_Done,applicationData=null
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:16:50.435 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075711
-2019-12-31 16:16:50.520 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-storage,lockKey=storage:1
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:16:50.523 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.lambda$branchRegister$0:98 -Successfully register branch xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075714
-2019-12-31 16:16:50.541 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,branchId=2031075714,resourceId=null,status=PhaseOne_Done,applicationData=null
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:16:50.544 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.branchReport:126 -Successfully branch report xid = 192.xx.xx.xx:8091:2031075709, branchId = 2031075714
-2019-12-31 16:16:52.569 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:205 -SeataMergeMessage xid=192.xx.xx.xx:8091:2031075709,extraData=null
-,clientIp:192.xx.xx.xx,vgroup:default
-2019-12-31 16:16:52.626 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:418 -Successfully rollback branch xid=192.xx.xx.xx:8091:2031075709 branchId=2031075714
-2019-12-31 16:16:52.693 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:418 -Successfully rollback branch xid=192.xx.xx.xx:8091:2031075709 branchId=2031075711
-2019-12-31 16:16:52.696 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:465 -Successfully rollback global, xid = 192.xx.xx.xx:8091:2031075709
+2020-04-21 20:35:09.036 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.DefaultServerMessageListenerImpl.onRegTmMessage:153 -TM register success,message:RegisterTMRequest{applicationId='order-server', transactionServiceGroup='default'},channel:[id: 0x1531fc7f, L:/192.168.158.247:8091 - R:/192.168.158.80:7822]
+2020-04-21 20:35:09.041 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage timeout=60000,transactionName=fsp_create_order
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:35:09.043 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCoordinator.doGlobalBegin:159 -Begin new global transaction applicationId: order-server,transactionServiceGroup: default, transactionName: fsp_create_order,timeout:60000,xid:192.168.158.247:8091:2009659516
+2020-04-21 20:35:09.456 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage xid=192.168.158.247:8091:2009659516,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-order,lockKey=order:1224
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:35:09.462 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.AbstractCore.lambda$branchRegister$0:87 -Register branch successfully, xid = 192.168.158.247:8091:2009659516, branchId = 2009659518, resourceId = jdbc:mysql://116.62.62.26/seata-order ,lockKeys = order:1224
+2020-04-21 20:35:10.382 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage xid=192.168.158.247:8091:2009659516,branchType=AT,resourceId=jdbc:mysql://116.62.62.26/seata-storage,lockKey=storage:1
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:35:10.388 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.AbstractCore.lambda$branchRegister$0:87 -Register branch successfully, xid = 192.168.158.247:8091:2009659516, branchId = 2009659521, resourceId = jdbc:mysql://116.62.62.26/seata-storage ,lockKeys = storage:1
+2020-04-21 20:35:10.721 INFO [batchLoggerPrint_1]io.seata.core.rpc.DefaultServerMessageListenerImpl.run:214 -SeataMergeMessage xid=192.168.158.247:8091:2009659516,extraData=null
+,clientIp:192.168.158.80,vgroup:default
+2020-04-21 20:35:10.862 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:290 -Rollback branch transaction  successfully, xid = 192.168.158.247:8091:2009659516 branchId = 2009659521
+2020-04-21 20:35:10.967 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:290 -Rollback branch transaction  successfully, xid = 192.168.158.247:8091:2009659516 branchId = 2009659518
+2020-04-21 20:35:10.971 INFO [ServerHandlerThread_1_500]io.seata.server.coordinator.DefaultCore.doGlobalRollback:334 -Rollback global transaction successfully, xid = 192.168.158.247:8091:2009659516.
 
 ```
