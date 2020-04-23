@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2f0f498-b586-4e17-9495-50274fe0660b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README-1.2.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-1.2.0.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/storage_server/target/" />
@@ -21,21 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="132" lean-forward="true" selection-start-line="21" selection-end-line="132" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README-1.2.0.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="300">
-                <caret line="247" column="173" lean-forward="true" selection-start-line="247" selection-start-column="173" selection-end-line="247" selection-end-column="173" />
+              <first_editor relative-caret-position="505">
+                <caret line="290" column="61" selection-start-line="290" selection-start-column="61" selection-end-line="290" selection-end-column="61" />
               </first_editor>
               <second_editor />
             </state>
@@ -57,13 +49,11 @@
       <find>fsp_tx</find>
       <find>default</find>
       <find>tm</find>
+      <find>no registry</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response35.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -84,6 +74,7 @@
         <option value="$PROJECT_DIR$/order_server/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/storage_server/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/README-1.2.0.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -113,10 +104,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -373,7 +364,7 @@
               </KeyValuePair>
               <KeyValuePair>
                 <option name="key" value="money" />
-                <option name="value" value="200" />
+                <option name="value" value="100" />
               </KeyValuePair>
             </list>
           </option>
@@ -417,7 +408,7 @@
               </KeyValuePair>
               <KeyValuePair>
                 <option name="key" value="money" />
-                <option name="value" value="100" />
+                <option name="value" value="200" />
               </KeyValuePair>
             </list>
           </option>
@@ -562,18 +553,20 @@
       <workItem from="1587037453292" duration="1428000" />
       <workItem from="1587039456679" duration="1946000" />
       <workItem from="1587132835738" duration="1692000" />
-      <workItem from="1587449507312" duration="13553000" />
+      <workItem from="1587449507312" duration="13868000" />
+      <workItem from="1587520075315" duration="1813000" />
+      <workItem from="1587633777699" duration="3172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38426000" />
+    <option name="totallyTimeSpent" value="43726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25603217" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20308311" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -582,7 +575,6 @@
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Web" order="8" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="REST Client" visible="true" weight="0.4589443" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.42668623" />
@@ -602,6 +594,7 @@
       <window_info anchor="bottom" id="JRebel Console" order="16" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="17" weight="0.32850942" />
       <window_info anchor="bottom" id="Dependency Viewer" order="18" weight="0.32991204" />
+      <window_info anchor="bottom" id="REST Client" order="19" weight="0.4589443" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -2750,24 +2743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account_server/src/main/java/io/seata/sample/AccountServerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage_server/pom.xml">
-      <provider selected="true" editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/seata/seata-all/1.2.0/seata-all-1.2.0.jar!/io/seata/discovery/registry/RegistryService.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -2841,29 +2816,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/order_server/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="54" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/account_server/pom.xml">
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/order_server/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
@@ -2872,25 +2831,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1096">
-          <caret line="45" column="36" lean-forward="true" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage_server/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="132" lean-forward="true" selection-start-line="21" selection-end-line="132" />
+        <state relative-caret-position="519">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README-1.2.0.md">
+    <entry file="file://$PROJECT_DIR$/storage_server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-227">
+          <caret line="42" column="57" lean-forward="true" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account_server/src/main/java/io/seata/sample/AccountServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account_server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account_server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="97" column="34" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="300">
-            <caret line="247" column="173" lean-forward="true" selection-start-line="247" selection-start-column="173" selection-end-line="247" selection-end-column="173" />
+          <first_editor relative-caret-position="505">
+            <caret line="290" column="61" selection-start-line="290" selection-start-column="61" selection-end-line="290" selection-end-column="61" />
           </first_editor>
           <second_editor />
         </state>
