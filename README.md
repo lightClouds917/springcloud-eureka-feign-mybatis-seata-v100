@@ -153,7 +153,7 @@ nohup sh seata-server.sh -h xx.xx.xx.xx -p 8091 -m db -n 1 &
 <!--seata-->
 <dependency>
   <groupId>com.alibaba.cloud</groupId>
-  <artifactId>spring-cloud-alibaba-seata</artifactId>
+  <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
   <version>2.2.0.RELEASE</version>
 //如果内嵌最新版本starter，我们不用排除再引入  
   <exclusions>
