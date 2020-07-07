@@ -22,4 +22,6 @@ public interface OrderService {
      * @param status
      */
     void update(Long userId, BigDecimal money, Integer status);
+
+    void changeCount(Integer count);
 }

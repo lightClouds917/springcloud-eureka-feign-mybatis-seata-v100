@@ -42,4 +42,10 @@ public class OrderController {
         orderServiceImpl.update(userId,money,status);
         return "订单状态修改成功";
     }
+
+    @GetMapping("updateCount")
+    String updateCount(@RequestParam("count") Integer count){
+        orderServiceImpl.changeCount(count);
+        return "更新成功";
+    }
 }

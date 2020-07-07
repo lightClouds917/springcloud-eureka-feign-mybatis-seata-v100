@@ -1,5 +1,7 @@
 package io.seata.sample.service;
 
+import io.seata.sample.dao.AppleDao;
+import io.seata.sample.dao.BananaDao;
 import io.seata.sample.dao.OrderDao;
 import io.seata.sample.entity.Order;
 import io.seata.sample.feign.AccountApi;
@@ -10,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author IT云清
@@ -26,6 +29,10 @@ public class OrderServiceImpl implements OrderService{
     private StorageApi storageApi;
     @Autowired
     private AccountApi accountApi;
+    @Autowired
+    private BananaDao bananaDao;
+    @Autowired
+    private AppleDao appleDao;
 
     /**
      * 创建订单
@@ -51,6 +58,21 @@ public class OrderServiceImpl implements OrderService{
         accountApi.decrease(order.getUserId(),order.getMoney());
 
         LOGGER.info("------->交易结束");
+    }
+
+
+    /**
+     * 此方法用于测试本地事务
+     * @param count
+     */
+    @Override
+    @Transactional
+    public void changeCount(Integer count){
+        bananaDao.updateCount(count);
+        if(count == 200){
+            throw new NullPointerException("测试事务异常");
+        }
+        appleDao.updateCount(count);
     }
 
     /**
