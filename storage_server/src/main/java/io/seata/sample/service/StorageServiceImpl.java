@@ -1,6 +1,7 @@
 package io.seata.sample.service;
 
 import io.seata.sample.dao.StorageDao;
+import java.time.LocalDateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,14 @@ public class StorageServiceImpl implements StorageService {
     @Override
     public void decrease(Long productId, Integer count) {
         LOGGER.info("------->扣减库存开始");
+        //模拟服务超时
+        try {
+            LOGGER.info("模拟超时"+ LocalDateTime.now().toString());
+            Thread.sleep(45000);
+            LOGGER.info("模拟超时"+ LocalDateTime.now().toString());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         storageDao.decrease(productId,count);
         LOGGER.info("------->扣减库存结束");
     }

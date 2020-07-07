@@ -24,6 +24,7 @@ spring:
         username: root
         type: com.alibaba.druid.pool.DruidDataSource
 
+
 # -----------seata--------------
 seata:
     enabled: true
@@ -135,3 +136,11 @@ seata:
 #            password: ""
 
 # -----------seata--------------
+
+# 处理feign超时异常
+feign:
+    client:
+        config:
+            default:
+                connectTimeout: 60000
+                readTimeout: 60000

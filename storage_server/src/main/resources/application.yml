@@ -19,6 +19,12 @@ spring:
         password: 14789632
         username: root
         type: com.alibaba.druid.pool.DruidDataSource
+feign:
+    client:
+        config:
+            default:
+                connectTimeout: 60000
+                readTimeout: 60000
 # -----------seata--------------
 seata:
     enabled: true

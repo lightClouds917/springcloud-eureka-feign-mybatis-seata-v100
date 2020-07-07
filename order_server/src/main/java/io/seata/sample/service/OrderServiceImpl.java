@@ -43,7 +43,7 @@ public class OrderServiceImpl implements OrderService{
      * 2.不添加本地事务：创建订单，扣减库存
      */
     @Override
-    @GlobalTransactional(name = "fsp_create_order")
+    @GlobalTransactional(name = "fsp_create_order",timeoutMills = 60000)
     public void create(Order order) {
         LOGGER.info("------->交易开始");
         //本地方法
