@@ -15,4 +15,21 @@
   <select id="getById" resultType="java.lang.Integer">
     select  used from storage where product_id = #{productId};
   </select>
+
+  <update id="decrease2">
+    UPDATE storage SET used = used + #{count},residue = residue - #{count} WHERE product_id = 2
+  </update>
+
+  <update id="decrease3">
+    UPDATE storage SET used = used + #{count},residue = residue - #{count} WHERE product_id = 3
+  </update>
+
+  <update id="decrease4">
+    UPDATE storage SET used = used + #{count},residue = residue - #{count} WHERE product_id = 4
+  </update>
+
+  <update id="decrease5">
+    UPDATE apple SET count = count - #{count} WHERE id = 1
+  </update>
 </mapper>
+

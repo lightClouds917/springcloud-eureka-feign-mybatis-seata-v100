@@ -28,14 +28,20 @@ public class StorageServiceImpl implements StorageService {
     public void decrease(Long productId, Integer count) {
         LOGGER.info("------->扣减库存开始");
         //模拟服务超时
-        try {
-            LOGGER.info("模拟超时"+ LocalDateTime.now().toString());
-            Thread.sleep(45000);
-            LOGGER.info("模拟超时"+ LocalDateTime.now().toString());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if(count == 15){
+            try {
+                LOGGER.info("模拟超时"+ LocalDateTime.now().toString());
+                Thread.sleep(45000);
+                LOGGER.info("模拟超时"+ LocalDateTime.now().toString());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         storageDao.decrease(productId,count);
+        storageDao.decrease2(productId,count);
+        storageDao.decrease3(productId,count);
+        storageDao.decrease4(productId,count);
+        storageDao.decrease5(productId,count);
         LOGGER.info("------->扣减库存结束");
     }
 

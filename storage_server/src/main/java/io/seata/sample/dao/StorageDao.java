@@ -16,6 +16,10 @@ public interface StorageDao {
      * @return
      */
     void decrease(@Param("productId") Long productId, @Param("count") Integer count);
+    void decrease2(@Param("productId") Long productId, @Param("count") Integer count);
+    void decrease3(@Param("productId") Long productId, @Param("count") Integer count);
+    void decrease4(@Param("productId") Long productId, @Param("count") Integer count);
+    void decrease5(@Param("productId") Long productId, @Param("count") Integer count);
 
     Integer getById(Long productId);
 }
